@@ -43,3 +43,7 @@ In the AutoDAO, I just have to extends my class, with Model class, and say what 
         return (new ProductModel()).Get(key);
      }
   ```
+The objective is make more easy to create some simple CRUD. It's not a complete persistence framwork, but, can help you to understando how this work.
+
+## Understanding the code ##
+Here I use Refrection to make possible to parse an DatabaseReader to an Object. 
