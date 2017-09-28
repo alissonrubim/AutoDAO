@@ -22,7 +22,7 @@ namespace ProdCRUD.Models
             }
         }
 
-        private string connectionString = "SERVER=localhost; DATABASE=teste; UID=root; PASSWORD=!@#$1234;";
+        public static string ConnectionString;
 
         private MySqlConnection connection;
 
@@ -30,8 +30,15 @@ namespace ProdCRUD.Models
         {
             if(connection == null)
             {
-                connection = new MySqlConnection(connectionString);
-                connection.Open();
+                if (ConnectionString != null)
+                {
+                    connection = new MySqlConnection(ConnectionString);
+                    connection.Open();
+                }
+                else
+                {
+                    throw new Exception("ConnectionString can not be null");
+                }
             }
         }
 

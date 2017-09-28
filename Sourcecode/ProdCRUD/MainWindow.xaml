@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProdCRUD"
         mc:Ignorable="d"
-        Title="MainWindow" Height="399.868" Width="743.865">
+        Title="Produtos" Height="399.868" Width="743.865">
     <StackPanel>
-        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Height="30" VerticalAlignment="Top">
-            <Button x:Name="btnAdd" Width="70" Height="20" Margin="10,0,10,0">Adicionar</Button>
-            <Button x:Name="btnEdit"  Width="70"  Height="20" Margin="10,0,10,0">Editar</Button>
-            <Button x:Name="btnRemove"  Width="70"  Height="20" Margin="10,0,10,0">Remover</Button>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Height="44" VerticalAlignment="Top">
+            <Button x:Name="btnAdd" Width="70" Height="20" Margin="10,0,10,0" Click="btnAdd_Click">Adicionar</Button>
+            <Button x:Name="btnEdit"  Width="70"  Height="20" Margin="10,0,10,0" Click="btnEdit_Click">Editar</Button>
+            <Button x:Name="btnRemove"  Width="70"  Height="20" Margin="10,0,10,0" Click="btnRemove_Click">Remover</Button>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Height="50">
             <Label Height="25">Pesquisar:</Label>
-            <TextBox x:Name="filterDescricao" Width="400" Height="25"></TextBox>
+            <TextBox x:Name="filterDescricao" Width="630" Height="25" Margin="0,12"></TextBox>
             <Button x:Name="filter" Click="filter_Click" Height="25">Go!</Button>
         </StackPanel>
         <StackPanel>

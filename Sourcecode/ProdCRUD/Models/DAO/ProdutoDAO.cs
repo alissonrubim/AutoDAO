@@ -8,11 +8,6 @@ namespace ProdCRUD.Models.DAO
 {
     class ProdutoDAO: Model<Produto>
     {
-        public ProdutoDAO()
-        {
-            
-        }
-
         public void Insert(Produto prod)
         {
             this.ExecuteCommand("INSERT INTO Produto(Codigo, Descricao, Preco) VALUES(@Codigo, @Descricao, @Preco)", new DatabaseParameter[] {
@@ -48,6 +43,9 @@ namespace ProdCRUD.Models.DAO
 
         public Produto Get(int key)
         {
+            this.ExecuteReader("SELECT Id, Codigo, Descricao, Preco FROM PRODUTO WHERE Id = @id", new DatabaseParameter[] {
+                new DatabaseParameter("id", key)
+            });
             return null;
         }
         
@@ -55,7 +53,9 @@ namespace ProdCRUD.Models.DAO
         public List<Produto> GetByDescricao(string descricao)
         {
             List<Produto> list = new List<Produto>();
-            this.ExecuteReader("SELECT Id, Codigo, Descricao, Preco FROM PRODUTO");
+            this.ExecuteReader("SELECT Id, Codigo, Descricao, Preco FROM PRODUTO WHERE Descricao LIKE @desricao", new DatabaseParameter[] {
+                new DatabaseParameter("descricao", $"%{descricao}%")
+            });
             return list;
         }
     }

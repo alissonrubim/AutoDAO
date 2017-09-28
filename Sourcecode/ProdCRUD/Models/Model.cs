@@ -8,6 +8,7 @@ namespace ProdCRUD.Models
 {
     public class Model<T>: Database
     {
+        //Classe provisória que será utilizada na AUTODAO
 
         /* public class ModelField
         {

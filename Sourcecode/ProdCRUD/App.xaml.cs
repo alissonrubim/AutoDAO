@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProdCRUD.Models;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,9 @@ namespace ProdCRUD
     /// </summary>
     public partial class App : Application
     {
+        public void Application_Start(object sender, StartupEventArgs args)
+        {
+            Database.ConnectionString = "SERVER=localhost; DATABASE=teste; UID=root; PASSWORD=!@#$1234;";
+        }
     }
 }

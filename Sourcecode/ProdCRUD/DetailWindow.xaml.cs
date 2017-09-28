@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProdCRUD.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,12 @@ namespace ProdCRUD
     /// </summary>
     public partial class DetailWindow : Window
     {
-        public DetailWindow()
+        public Produto currentData = null;
+        public DetailWindow(Produto prod)
         {
             InitializeComponent();
+            currentData = prod;
+            DataContext = currentData;
         }
     }
 }

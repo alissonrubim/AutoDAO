@@ -1,4 +1,5 @@
-﻿using ProdCRUD.Models.DAO;
+﻿using ProdCRUD.Models;
+using ProdCRUD.Models.DAO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,9 +46,30 @@ namespace ProdCRUD
             }
         }
 
+        private void openDetail(Produto prod)
+        {
+            DetailWindow detail = new DetailWindow(prod);
+            detail.ShowDialog();
+        }
+
         private void filter_Click(object sender, RoutedEventArgs e)
         {
             reloadGrid();
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            openDetail(null);
+        }
+
+        private void btnRemove_Click(object sender, RoutedEventArgs e)
+        {
+            openDetail(null);
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
