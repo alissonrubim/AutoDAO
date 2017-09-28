@@ -34,12 +34,12 @@ In the AutoDAO, I just have to extends my class, with Model class, and say what 
   
   ```csharp
      public void AddNew(){
-        (new ProductModel).Insert(new Product(){
+        (new ProductModel()).Insert(new Product(){
            Description: "Computer"
         });
      }
      
      public Procut GetByPrimaryKey(int key){
-        return (new ProductModel).Get(key);
+        return (new ProductModel()).Get(key);
      }
   ```
