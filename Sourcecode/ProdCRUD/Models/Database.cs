@@ -56,9 +56,9 @@ namespace ProdCRUD.Models
             this.ExecuteCommand(query, null);
         }
 
-        public void ExecuteReader(string query)
+        public MySqlDataReader ExecuteReader(string query)
         {
-            this.ExecuteReader(query, null);
+            return this.ExecuteReader(query, null);
         }
 
         public void ExecuteCommand(string query, DatabaseParameter[] parameters)
@@ -69,7 +69,7 @@ namespace ProdCRUD.Models
             this.CloseConnection();
         }
 
-        public IDataReader ExecuteReader(string query, DatabaseParameter[] parameters)
+        public MySqlDataReader ExecuteReader(string query, DatabaseParameter[] parameters)
         {
             if (connection == null)
                 this.OpenConnection();

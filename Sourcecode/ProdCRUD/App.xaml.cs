@@ -16,7 +16,7 @@ namespace ProdCRUD
     {
         public void Application_Start(object sender, StartupEventArgs args)
         {
-            Database.ConnectionString = "SERVER=localhost; DATABASE=teste; UID=root; PASSWORD=!@#$1234;";
+            Database.ConnectionString = "SERVER=localhost; DATABASE=produto; UID=root; PASSWORD=123456;";
         }
     }
 }

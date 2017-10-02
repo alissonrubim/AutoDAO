@@ -28,7 +28,6 @@ namespace ProdCRUD
         public MainWindow()
         {
             InitializeComponent();
-            gridResume.ItemsSource = gridResumeList;
             dao = new ProdutoDAO();
             reloadGrid();
         }
@@ -44,12 +43,15 @@ namespace ProdCRUD
             {
                 gridResumeList = dao.GetByDescricao(filter);
             }
+
+            gridResume.ItemsSource = gridResumeList;
         }
 
         private void openDetail(Produto prod)
         {
             DetailWindow detail = new DetailWindow(prod);
             detail.ShowDialog();
+            reloadGrid();
         }
 
         private void filter_Click(object sender, RoutedEventArgs e)
@@ -64,12 +66,17 @@ namespace ProdCRUD
 
         private void btnRemove_Click(object sender, RoutedEventArgs e)
         {
-            openDetail(null);
+            dao.Delete(getSelected());
         }
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
+            openDetail(getSelected());
+        }
 
+        public Produto getSelected()
+        {
+            return null;
         }
     }
 }

@@ -18,7 +18,7 @@
             <Button x:Name="filter" Click="filter_Click" Height="25">Go!</Button>
         </StackPanel>
         <StackPanel>
-            <DataGrid x:Name="gridResume" DockPanel.Dock="Bottom" Height="290" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid x:Name="gridResume" DockPanel.Dock="Bottom" Height="290" ItemsSource="{Binding gridResumeList}" AutoGenerateColumns="False" IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Codigo}" Header="Codigo" Width="100"/>
                     <DataGridTextColumn Binding="{Binding Descricao}" Header="Descrição" Width="350"/>

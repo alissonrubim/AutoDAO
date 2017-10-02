@@ -1,4 +1,5 @@
 ﻿using ProdCRUD.Models;
+using ProdCRUD.Models.DAO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +22,31 @@ namespace ProdCRUD
     public partial class DetailWindow : Window
     {
         public Produto currentData = null;
+
         public DetailWindow(Produto prod)
         {
             InitializeComponent();
             currentData = prod;
-            DataContext = currentData;
+            if (prod == null)
+                DataContext = new Produto();
+            else
+                DataContext = currentData;
+        }
+
+        public void btnConfirm_Click(object sender, EventArgs args)
+        {
+            Produto current = (Produto)DataContext;
+            ProdutoDAO dao = new ProdutoDAO();
+            if (currentData == null)
+                dao.Insert(current);
+            else
+                dao.Update(current);
+            this.Close();
+        }
+
+        public void btnCancel_Click(object sender, EventArgs args)
+        {
+            this.Close();
         }
     }
 }

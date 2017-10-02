@@ -16,8 +16,8 @@
             <TextBox x:Name="txtPreco" Text="{Binding Path=Preco}" Margin="10,0"></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" Height="50"  HorizontalAlignment="Right">
-            <Button x:Name="confirm" Height="20" Margin="0,0,10,0" >Confirmar</Button>
-            <Button x:Name="cancel" Height="20" Margin="0,0,10,0">Cancelar</Button>
+            <Button x:Name="btnConfirm" Height="20" Margin="0,0,10,0" Click="btnConfirm_Click">Confirmar</Button>
+            <Button x:Name="btnCancel" Height="20" Margin="0,0,10,0" Click="btnCancel_Click">Cancelar</Button>
         </StackPanel>
     </StackPanel>
 </Window>
